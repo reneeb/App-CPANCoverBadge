@@ -1,0 +1,88 @@
+[![Build Status](https://travis-ci.org/reneeb/App-CPANCoverBadge.svg?branch=master)](https://travis-ci.org/reneeb/App-CPANCoverBadge)
+[![Kwalitee status](http://cpants.cpanauthors.org/dist/App-CPANCoverBadge.png)](http://cpants.charsbar.org/dist/overview/App-CPANCoverBadge)
+[![GitHub issues](https://img.shields.io/github/issues/reneeb/App-CPANCoverBadge.svg)](https://github.com/reneeb/App-CPANCoverBadge/issues)
+
+# NAME
+
+App::CPANCoverBadge - Get badge for cpancover
+
+# VERSION
+
+version 0.01
+
+# SYNOPSIS
+
+    use App::CPANCoverBadge;
+
+    my $badger = App::CPANCoverBadge->new;
+    my $badge  = $badger->badge( 'App-CPANCoverBadge-0.01' );
+    
+    say $badge;
+
+# ATTRIBUTES
+
+- db\_file
+- sql
+- ua
+
+# METHODS
+
+## badge
+
+
+
+# Development
+
+The distribution is contained in a Git repository, so simply clone the
+repository
+
+```
+$ git clone git://github.com/reneeb/App-CPANCoverBadge.git
+```
+
+and change into the newly-created directory.
+
+```
+$ cd App-CPANCoverBadge
+```
+
+The project uses [`Dist::Zilla`](https://metacpan.org/pod/Dist::Zilla) to
+build the distribution, hence this will need to be installed before
+continuing:
+
+```
+$ cpanm Dist::Zilla
+```
+
+To install the required prequisite packages, run the following set of
+commands:
+
+```
+$ dzil authordeps --missing | cpanm
+$ dzil listdeps --author --missing | cpanm
+```
+
+The distribution can be tested like so:
+
+```
+$ dzil test
+```
+
+To run the full set of tests (including author and release-process tests),
+add the `--author` and `--release` options:
+
+```
+$ dzil test --author --release
+```
+
+# AUTHOR
+
+Renee Baecker <reneeb@cpan.org>
+
+# COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2019 by Renee Baecker.
+
+This is free software, licensed under:
+
+    The Artistic License 2.0 (GPL Compatible)
