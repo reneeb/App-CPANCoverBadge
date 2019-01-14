@@ -48,11 +48,14 @@ sub badge ($self, $dist) {
                     '#ffff99' :           # yellow
                     '#99ff99';            # green
 
+    my $default_font = Mojo::File->new( $INC{"Badge/Simple.pm"} )
+        ->sibling('Simple', 'DejaVuSans.ttf')->to_string;
+
     my $svg = Badge::Simple::badge(
         left  => 'CPANCover',
         right => $rating,
         color => $color,
-        font  => $ENV{BADGE_FONT} // '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
+        font  => $ENV{BADGE_FONT} // $default_font,
     )->toString;
 
     $self->sql->db->insert('badges', { dist => $dist, badge => $svg } );
