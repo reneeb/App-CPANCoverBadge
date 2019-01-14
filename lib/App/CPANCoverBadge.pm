@@ -7,9 +7,6 @@ use v5.20;
 use strict;
 use warnings;
 
-use feature 'signatures';
-no warnings 'experimental::signatures';
-
 our $VERSION = '0.01';
 
 use Badge::Simple ();
@@ -19,16 +16,16 @@ use Mojo::SQLite;
 use Mojo::UserAgent;
 use Types::Dist;
 
-use Moo;
+use Mojo::Base -base, -signatures;
 
-has sql     => ( is => 'ro', lazy => 1, default => \&_connect_db );
-has ua      => ( is => 'ro', default => sub { Mojo::UserAgent->new } );
-has db_file => ( is => 'ro', default => sub {
+has sql     => \&_connect_db;
+has ua      => sub { Mojo::UserAgent->new };
+has db_file => sub {
     my $db_file = Mojo::File->new(
         File::HomeDir->my_home,
         'cpancover_badges.db'
     )->to_string;
-});
+};
 
 sub badge ($self, $dist) {
     my $select = q~SELECT badge FROM badges WHERE dist = ?~;
