@@ -1295,3 +1295,77 @@ n/a
 </body>
 </html>
 
+@@ invalid.response
+HTTP/1.1 404 Not Found
+Server: nginx/1.10.3 (Ubuntu)
+Date: Wed, 19 Dec 2018 18:54:51 GMT
+Content-Type: text/html
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+ETag: W/"571b65cf-943"
+
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+    <meta http-equiv="Content-Language" content="en-us"></meta>
+    <link rel="stylesheet" type="text/css" href="/latest/collection.css"></link>
+    <title>404</title>
+  </head>
+  <body>
+
+    <h1>Oops!</h1>
+
+    <p>You have managed to reach a page that doesn't exist.</p>
+
+    <p><i>Just think about that for a moment!.</i></p>
+
+    <p>This may be because:</p>
+
+    <ul>
+      <li>The module you are looking for has recently been uploaded and the coverage has not been generated yet.</li>
+      <li>There may have been a problem generating coverage for the module.  Maybe:</li>
+      <ul>
+        <li>Some module dependencies could not be satisfied - either Perl
+          modules which failed to install, or external dependencies which are
+          not available on the cpancover server.</li>
+        <li>The module has no tests, or they could not be run.</li>
+        <li>Running the tests on the cpancover server took more than 30
+          minutes.
+        </li>
+        <li>There is a bug in either Devel::Cover or cpancover.</li>
+      </ul>
+      <li>You may have followed an outdated link from an external site.</li>
+      <li>You may have followed a broken link from this site.</li>
+      <li>You were messing around and typing stuff into the address bar.</li>
+      <li>You are trying to hack the site. <i>Stop that!.</i></li>
+    </ul>
+
+    <p>If you think the problem is due to a bug in Devel::Cover or cpancover,
+    please feel free to report it.</p>
+
+    <hr/>
+    <p>
+    Coverage information from <a href="https://metacpan.org/module/Devel::Cover">
+      Devel::Cover
+    </a> by <a href="http://pjcj.net">Paul Johnson</a>.
+
+    <br/>
+
+    Please report problems with this site to the
+    <a href="https://github.com/pjcj/Devel--Cover/issues">issue tracker</a>.</p>
+
+    <p><a href="http://cpancover.com/latest/about.html">About</a> the project.</p>
+
+    <p>This server generously donated by
+    <a href="http://www.bytemark.co.uk/r/cpancover">
+      <img src="http://www.bytemark.co.uk/images/subpages/spreadtheword/bytemark_logo_179_x_14.png" alt="bytemark"/>
+    </a>
+    </p>
+  </body>
+</html>
+
