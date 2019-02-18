@@ -28,8 +28,9 @@ has db_file => sub {
 };
 
 sub badge ($self, $dist) {
+    my $db     = $self->sql->db;
     my $select = q~SELECT badge FROM badges WHERE dist = ?~;
-    my $result = $self->sql->db->query( $select, $dist )->hash // {};
+    my $result = $db->query( $select, $dist )->hash // {};
     my $badge  = $result->{badge};
 
     return $badge if $badge;
@@ -58,7 +59,7 @@ sub badge ($self, $dist) {
         font  => $font,
     )->toString;
 
-    $self->sql->db->insert('badges', { dist => $dist, badge => $svg } );
+    $db->insert('badges', { dist => $dist, badge => $svg } );
 
     return $svg;
 }
