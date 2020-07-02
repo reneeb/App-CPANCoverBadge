@@ -1,3 +1,5 @@
 *.sw*
 App-CPANCoverBadge-*
 .build/
+bin/cpan_cover_badge.conf
+bin/hypnotoad.pid
