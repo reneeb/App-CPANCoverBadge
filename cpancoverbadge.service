@@ -1,0 +1,20 @@
+[Unit]
+Description=CPAN Cover Badge
+After=network.target
+Requires=network.target
+
+[Service]
+Type=simple
+TimeoutStartSec=5m
+Restart=always
+User=web
+Group=web
+ExecStart=hypnotoad bin/cpan_cover_badge -f
+ExecReload=hypnotoad bin/cpan_cover_badge
+ExecStop=hypnotoad -s bin/cpan_cover_badge
+PIDFile=/home/web/App-CPANCoverBadge/bin/hypnotoad.pid
+KillMode=process
+SyslogIdentifier=App-CPANCoverBadge
+
+[Install]
+WantedBy=multi-user.target
